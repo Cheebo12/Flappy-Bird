@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawnning : MonoBehaviour
 {   private float timer = 0;
-    private float maxtime = 1;
+    private float maxtime = 1.2f;
     public GameObject Pillars;
     
     public float height;
@@ -18,7 +18,7 @@ public class Spawnning : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {if(timer > maxtime){
+    {if(timer > maxtime && jump.flag == true){
                   y = Random.Range(5.80f, 1.79f); 
         GameObject newpillar = Instantiate(Pillars);
 
@@ -28,8 +28,9 @@ public class Spawnning : MonoBehaviour
         Destroy(newpillar, 8);
         
        
- }
+ }   if(jump.flag == true){
         timer += Time.deltaTime;
+ }
     }
     
     

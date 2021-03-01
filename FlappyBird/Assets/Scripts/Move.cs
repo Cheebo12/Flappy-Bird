@@ -14,6 +14,12 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(jump.flag==true){
+         if(ScoreAdd.score < 20 || (ScoreAdd.score < 60&& ScoreAdd.score > 40)|| (ScoreAdd.score > 80 )){   
         transform.position += Vector3.left * speed *  Time.deltaTime;
+         }else{
+             transform.position += Vector3.left * 5.5f *  Time.deltaTime;
+         }
+        }
     }
 }
